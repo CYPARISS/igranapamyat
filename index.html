@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1 задание</title>
+	<style>
+		/* Див с картинкой фоном 'you win', который скрыт. */
+
+		.box {
+			background-image: url(2.jpg);
+			background-size: 100% 100%;
+			width: 350px;
+			height: 225px;
+			position: absolute;
+			background-color: black;
+			left: 300px;
+			top: 220px;
+			box-shadow: 0px 0px 30px #6322e6;
+			transition: 1s;		
+		}
+
+		.box1 {
+			background-image: url(2.jpg);
+			background-size: 100% 100%;
+			width: 350px;
+			height: 225px;
+			position: absolute;
+			background-color: black;
+			left: 780px;
+			top: 220px;		
+			box-shadow: 0px 0px 30px #6322e6;
+			transition: 1s;
+		}
+
+		.box2 {
+			background-image: url(2.jpg);
+			background-size: 100% 100%;
+			width: 350px;
+			height: 225px;
+			position: absolute;
+			background-color: black;
+			left: 1260px;
+			top: 220px;
+			box-shadow: 0px 0px 30px #6322e6;
+			transition: 1s;		
+		}
+
+		.box3 {
+			background-image: url(2.jpg);
+			background-size: 100% 100%;
+			width: 350px;
+			height: 225px;
+			position: absolute;
+			background-color: black;
+			left: 300px;
+			top: 520px;
+			box-shadow: 0px 0px 30px #6322e6;
+			transition: 1s;		
+		}
+
+		.box4 {
+			background-image: url(2.jpg);
+			background-size: 100% 100%;
+			width: 350px;
+			height: 225px;
+			position: absolute;
+			background-color: black;
+			left: 780px;
+			top: 520px;
+			box-shadow: 0px 0px 30px #6322e6;
+			transition: 1s;		
+		}
+
+		.box5 {
+			background-image: url(2.jpg);
+			background-size: 100% 100%;
+			width: 350px;
+			height: 225px;
+			position: absolute;
+			background-color: black;
+			left: 1260px;
+			top: 520px;
+			box-shadow: 0px 0px 30px #6322e6;
+			transition: 1s;		
+		}
+
+		.img{
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+
+		.img1{
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+
+		.img2{
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+
+		.img3{
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+
+		.img4{
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+
+		.img5{
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+
+	</style>
+</head>
+<body class="back" style="background-image: url(1.jpg); background-size: 100%; color: white; text-align: center; text-shadow: 0px 0px 10px #6322e6;">
+	<h1>Осталось попыток: <span class="kk">3</span></h1>
+	
+	<h1>Где спрятан MPX</h1>
+	<div class="box">
+		<img src="1.png" class="img">
+	</div>
+	<div class="box1">
+		<img src="3.jpg" class="img1">
+	</div>
+	<div class="box2">
+		<img src="4.jpg" class="img2">
+	</div>
+	<div class="box3">
+		<img src="5.jpg" class="img3">
+	</div>
+	<div class="box4">
+		<img src="6.jpg" class="img4">
+	</div>
+	<div class="box5">
+		<img src="7.jpg" class="img5">
+	</div>
+
+	<script>
+		let count = 3
+		let kk = document.querySelector('.kk');
+		let box = document.querySelector('.box');
+		let box1 = document.querySelector('.box1');
+		let box2 = document.querySelector('.box2');
+		let box3 = document.querySelector('.box3');
+		let box4 = document.querySelector('.box4');
+		let box5 = document.querySelector('.box5');
+		let img = document.querySelector('.img');
+		let img1 = document.querySelector('.img1');
+		let img2 = document.querySelector('.img2');
+		let img3 = document.querySelector('.img3');
+		let img4 = document.querySelector('.img4');
+		let img5 = document.querySelector('.img5');
+		let back = document.querySelector('.back')
+			
+
+		setTimeout(move, 2000);
+		function move(){
+			box.style.left = 1260 + 'px';
+			box.style.top = 520 + 'px';
+			box1.style.left = 780 + 'px';
+			box1.style.top = 520 + 'px';
+			box2.style.left = 300 + 'px';
+			box2.style.top = 220 + 'px';
+			box3.style.left = 1260 + 'px';
+			box3.style.top = 220 + 'px';
+			box4.style.left = 780 + 'px';
+			box4.style.top = 220 + 'px';
+			box5.style.left = 300 + 'px';
+			box5.style.top = 520 + 'px';
+
+			img5.style.display = 'none';
+			img4.style.display = 'none';
+			img3.style.display = 'none';
+			img2.style.display = 'none';
+			img1.style.display = 'none';
+			img.style.display = 'none';
+
+			box.onclick = function(){
+				count = count - 1;
+				kk.innerHTML = count;
+				img.style.display = 'block';
+				alert('Неа');
+				if (count == 0){
+					alert('ТЫ ПРОИГРАЛ')
+					count = 'не осталось)'
+					kk.innerHTML = count;
+					box5.style.boxShadow = '0px 0px 1000px #c20e53';
+					img5.style.display = 'block';
+					img4.style.display = 'none';
+					img3.style.display = 'none';
+					img2.style.display = 'none';
+					img1.style.display = 'none';
+					img.style.display = 'none';
+					back.style.textShadow = '0px 0px 10px red';
+				}
+			}
+
+			box1.onclick = function(){
+				count = count - 1;
+				kk.innerHTML = count;
+				img1.style.display = 'block';
+				alert('Неа');
+				if (count == 0){
+					alert('ТЫ ПРОИГРАЛ')
+					count = 'не осталось)'
+					kk.innerHTML = count;
+					box5.style.boxShadow = '0px 0px 1000px #c20e53';
+					img5.style.display = 'block';
+					img4.style.display = 'none';
+					img3.style.display = 'none';
+					img2.style.display = 'none';
+					img1.style.display = 'none';
+					img.style.display = 'none';
+					back.style.textShadow = '0px 0px 10px red';
+				} 
+			}
+
+			box2.onclick = function(){
+				count = count - 1;
+				kk.innerHTML = count;
+				img2.style.display = 'block';
+				alert('Неа');
+				if (count == 0){
+					alert('ТЫ ПРОИГРАЛ')
+					count = 'не осталось)'
+					kk.innerHTML = count;
+					box5.style.boxShadow = '0px 0px 1000px #c20e53';
+					img5.style.display = 'block';
+					img4.style.display = 'none';
+					img3.style.display = 'none';
+					img2.style.display = 'none';
+					img1.style.display = 'none';
+					img.style.display = 'none';
+					back.style.textShadow = '0px 0px 10px red';
+				}
+			}
+
+			box3.onclick = function(){
+				count = count - 1;
+				kk.innerHTML = count;
+				img3.style.display = 'block';
+				alert('Неа');
+				if (count == 0){
+					alert('ТЫ ПРОИГРАЛ')
+					count = 'не осталось)'
+					kk.innerHTML = count;
+					box5.style.boxShadow = '0px 0px 1000px #c20e53';
+					img5.style.display = 'block';
+					img4.style.display = 'none';
+					img3.style.display = 'none';
+					img2.style.display = 'none';
+					img1.style.display = 'none';
+					img.style.display = 'none';
+					back.style.textShadow = '0px 0px 10px red';
+				} 
+			}
+
+			box4.onclick = function(){
+				count = count - 1;
+				kk.innerHTML = count;
+				img4.style.display = 'block';
+				alert('Неа');
+				if (count == 0){
+					alert('ТЫ ПРОИГРАЛ')
+					count = 'не осталось)'
+					kk.innerHTML = count;
+					box5.style.boxShadow = '0px 0px 1000px #c20e53';
+					img5.style.display = 'block';
+					img4.style.display = 'none';
+					img3.style.display = 'none';
+					img2.style.display = 'none';
+					img1.style.display = 'none';
+					img.style.display = 'none';
+					back.style.textShadow = '0px 0px 10px red';
+				} 
+			}
+
+			box5.onclick = function(){
+				count = 'Yeehaw!';
+				kk.innerHTML = count;
+				img5.style.display = 'block';
+				alert('НАШЕЛ');
+				img4.style.display = 'none';
+				img3.style.display = 'none';
+				img2.style.display = 'none';
+				img1.style.display = 'none';
+				img.style.display = 'none';
+				box5.style.boxShadow = '0px 0px 1000px green';
+				back.style.textShadow = '0px 0px 10px green';
+			}
+		}
+		
+		
+
+	</script>
+</body>
+</html>
